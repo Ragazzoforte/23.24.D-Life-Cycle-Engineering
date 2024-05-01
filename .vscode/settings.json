@@ -6,14 +6,21 @@
         "captionpos",
         "codegray",
         "codepurple",
+        "etex",
         "keepspaces",
         "keywordstyle",
         "letterpaper",
+        "longtable",
         "numbersep",
         "numberstyle",
         "showspaces",
         "showstringspaces",
         "showtabs",
         "tabsize"
+    ],
+    "cSpell.words": [
+        "Creality",
+        "FMEA",
+        "hotend"
     ]
 }
