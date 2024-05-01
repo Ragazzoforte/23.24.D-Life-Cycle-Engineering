@@ -83,7 +83,7 @@
 \setlength{\parindent}{0pt} % No indentation for new paragraphs
 
 \newpage
-\section{Opdrachtomschrijving}
+\section{Opdracht}
 \subsection{Inleiding}
 In deze opdracht gaan we dieper in op het analyseren van technische objecten met als doel correctieve en preventieve maatregelen te identificeren om de prestaties te verbeteren en storingen te verminderen. Je zult verschillende technieken toepassen, zoals het opstellen van een functioneel schema, het uitvoeren van een FMEA/FTA (Fault Tree Analysis/Failure Mode and Effects Analysis), en het uitvoeren van een Pareto analyse.
 
@@ -102,8 +102,71 @@ Deze opdracht biedt studenten de mogelijkheid om praktijkervaring op te doen met
 
 
 \newpage
-\section{Functioneel Schema}
 
+\section{Functioneel Schema}
+\subsection{Inleiding}
+Een functioneel schema is een schematische weergave van de werking van een technisch systeem. Een functioneel schema toont de verschillende componenten van het systeem en hun onderlinge relaties. Het doel van een functioneel schema is om een overzicht te geven van de werking van het systeem en de interactie tussen de verschillende componenten. Dit kan helpen bij het identificeren van storingen en het verbeteren van de prestaties van het systeem. In deze sectie zullen we een functioneel schema opstellen voor de Creality Ender 3 V2 3D-printer.
+
+\subsection{Categorieën}
+De Creality Ender 3 V2 3D-printer is een populaire 3D-printer die wordt gebruikt voor het maken van driedimensionale objecten door laag voor laag materiaal toe te voegen. Het systeem bestaat uit verschillende componenten die samenwerken om het printproces te voltooien. Binnen de context van een functioneel schema kunnen we de volgende categorieën onderscheiden:
+\begin{itemize}
+  \item Ingang
+  \item Signal Processing
+  \item Uitgang
+  \item Voeding
+  \item User interface
+\end{itemize}
+
+Binnen deze categorieën kunnen we de verschillende componenten van de 3D-printer identificeren en hun onderlinge relaties beschrijven. Dit zal ons helpen om een beter begrip te krijgen van de werking van de 3D-printer. De verschillende relaties zijn aangeduid met pijlen die de richting van de gegevensstroom aangeven. De pijlen zijn met kleurcodering aangegeven om de verschillende categorieën te onderscheiden.
+
+\subsection{Onderdelen}
+\textbf{Ingang}
+\begin{itemize}
+  \item End Switches\\
+  Hiervan zitten er 2 op de Creality Ender 3 V2, een voor de X-as en een voor de Y-as. Deze worden gebruikt om de printer te kalibreren en de positie van de nozzle te bepalen.
+  \item Bed Temperatuur\\
+  Dit is een thermistor die de temperatuur van het heated bed meet. Dit is belangrijk voor het printproces, omdat de temperatuur van het bed van invloed is op de hechting van het filament. Wat directe invloed heeft op de kwaliteit van de print.
+  \item Nozzle Temperatuur\\
+  Dit is een thermistor die de temperatuur van de hotend meet. Dit is belangrijk voor het printproces, omdat de temperatuur van de hotend van invloed is op het smelten van het filament. Wat directe invloed heeft op de kwaliteit van de print.
+  \item Probe\\
+  Dit is een sensor die de hoogte van het bed meet. Dit is belangrijk voor het printproces, omdat de hoogte van het bed van invloed is op de hechting van het filament. De probe word voornamelijk gebruikt voor het automatisch levelen van het bed in het calibratie proces.
+\end{itemize}
+
+\textbf{Signal Processing}
+\begin{itemize}
+  \item Moeder Board\\
+  Dit is het brein van de 3D-printer. Het moederbord ontvangt de signalen van de verschillende sensoren en stuurt de motoren en heaters aan. Het moederbord bevat ook de firmware die de printer aanstuurt.
+\end{itemize}
+
+\textbf{Uitgang}
+\begin{itemize}
+  \item Stepper motor X\\
+  Dit is de motor die de X-as van de printer aanstuurt. De motor beweegt de nozzle horizontaal over het printbed.
+  \item Stepper motor Y\\
+  Dit is de motor die de Y-as van de printer aanstuurt. De motor beweegt het printbed horizontaal onder de nozzle.
+  \item Stepper motor Z\\
+  Dit is de motor die de Z-as van de printer aanstuurt. De motor beweegt het printbed verticaal omhoog en omlaag. Hiervan zijn er 2, een voor de linker en een voor de rechter kant van de arm waar X-as over beweegt.
+  \item Heated Bed\\
+  Dit is het verwarmde bed waarop het object wordt geprint. Het heated bed wordt verwarmd om de hechting van het filament te verbeteren.
+  \item Hotend\\
+  Dit is het verwarmde uiteinde van de printer waar het filament wordt gesmolten. Het hotend is verantwoordelijk voor het extruderen van het filament en het vormen van het object.
+  \item Hotend Fan\\
+  Dit is de ventilator die het geëxtrudeerde filament koelt zodat het snel hard word en niet meer kan vervormen.
+\end{itemize}
+
+\textbf{Voeding}
+\begin{itemize}
+  \item Power Supply
+  De power supply converteert de netspanning naar de benodigde spanning voor de verschillende componenten van de printer.
+\end{itemize}
+
+\textbf{User interface}
+\begin{itemize}
+  \item Display
+  Het display is het scherm waarop de gebruiker de printer kan bedienen en de status van het printproces kan volgen. Dit is de enigste plek waar de gebruiker interactie heeft met de printer.
+\end{itemize}
+
+\subsection{FMEA Schema}
 \begin{figure}[H]
   \centering
   \includegraphics[width=\textwidth]{Creality Ender V2.drawio.png}
@@ -111,16 +174,9 @@ Deze opdracht biedt studenten de mogelijkheid om praktijkervaring op te doen met
 
 
 \newpage
+
 \section{FMEA}
 \subsection{scope}
-De scope van deze FMEA is gericht op de elektrische componenten van de Creality Ender 3 V2 3D-printer. Een FMEA (Failure Mode and Effects Analysis) is een methode om potentiële faalmodi, hun effecten en de ernst ervan te identificeren. In dit geval richten we ons specifiek op de elektrische componenten van de printer, zoals de voeding, eindschakelaars, bed temperatuur, probe, moederbord, stepper motoren, verwarmd bed, hotend en hotend ventilator.
-
-Het doel van deze FMEA is om potentiële faalmodi in de elektrische componenten van de 3D-printer te identificeren en de ernst van de effecten te beoordelen. Door deze analyse uit te voeren, kunnen we proactieve maatregelen nemen om de betrouwbaarheid en veiligheid van de printer te verbeteren. Dit kan bijvoorbeeld leiden tot het implementeren van redundante systemen, het verbeteren van de detectie van storingen of het nemen van corrigerende acties om de risico's te verminderen.
-
-Het resultaat van deze FMEA is een tabel waarin de verschillende faalmodi, effecten, ernst, frequentie van optreden, detectie en risicoprioriteitsgetal (RPN) worden geëvalueerd. Op basis van deze evaluatie kunnen corrigerende acties worden voorgesteld om de risico's te verminderen en de betrouwbaarheid van de elektrische componenten te verbeteren.
-\\
-Deze FMEA is van belang voor het waarborgen van de kwaliteit en betrouwbaarheid van de Creality Ender 3 V2 3D-printer. Door potentiële faalmodi en hun effecten te identificeren, kunnen we proactief maatregelen nemen om storingen te voorkomen en de gebruikerservaring te verbeteren.
-
 \subsection{Onderdelen}
 \subsubsection*{End Switches}
 % \cite{reddit_end_switches}
